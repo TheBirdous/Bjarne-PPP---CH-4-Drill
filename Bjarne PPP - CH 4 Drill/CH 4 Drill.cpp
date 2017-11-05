@@ -9,17 +9,26 @@ int main()
 
 	while (cin >> n)
 	{
-		if ((x < n) && (n > iH))
+		if (iL == 0 && iH == 0)
+		{
 			iH = n;
-		if ((x > n) && (n < iL))
 			iL = n;
-		if (n == iL)
-			cout << n << ", smallest one so far." << '\n';
-		if (n == iH)
+			cout << "You're a special snowflake first val, yahoo!\n";
+		}
+		else if (n > iH)
+		{
+			iH = n;
 			cout << n << ", biggest one so far." << '\n';
-		if (n != iH && n != iL)
+		}
+		else if (n < iL)
+		{
+			iL = n;
+			cout << n << ", smallest one so far." << '\n';
+		}
+		else
+		{
 			cout << n << ", nothing." << '\n';
-		n = x;
+		}
 
 	}
 }
