@@ -13,6 +13,9 @@ int main()
 	double converted = 0;
 	double largest_converted = 0;
 	double sum = 0;
+	double meters = 0;
+
+	vector <double> units;
 
 	bool unit_correct = true;
 
@@ -71,9 +74,18 @@ int main()
 							}	
 		
 				sum = sum + converted;
-
+				meters = converted / 100;
+				units.push_back(meters);
+				sort(units);
 	}
 
+	cout << "The entered values are: {" << units[0];
+
+	for (int i = 1; i<units.size(); ++i)
+	{
+		cout << ", " << units[i];
+	}
+	cout << "}.\n";
 	cout << "The sum of all entered values is: " << sum / 100 << "m\n";
 	cout << "The smallest value of all entered values is: " << iL / 100 << "m\n";
 	cout << "The largest value of all entered values is: " << iH / 100 << "m\n";
