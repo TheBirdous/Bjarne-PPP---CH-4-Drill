@@ -12,6 +12,7 @@ int main()
 	double smallest_converted = 0;
 	double converted = 0;
 	double largest_converted = 0;
+	double sum = 0;
 
 	bool unit_correct = true;
 
@@ -44,29 +45,37 @@ int main()
 								else
 								{
 									unit_correct = false;
+									converted = 0;
 									cout << "Error, invalid or no unit has been entered, please try again: ";
 								}
 
-		if (iL == 0 && iH == 0 && unit_correct == true)
-		{
-			iH = converted;
-			iL = converted;
-			cout << value << " " << unit << " You're a special snowflake first val, yahoo!\n";
-		}
-		else if (converted >= iH && unit_correct == true)
-		{
-			iH = converted;
-			cout << value << " " << unit << ", is the biggest value so far." << '\n';
-		}
-		else if (converted <= iL && unit_correct == true)
-		{
-			iL = converted;
-			cout << value << " " << unit << ", is the smallest value so far." << '\n';
-		}
-		else if ( iL < converted < iH && unit_correct == true)
-		{
-			cout << value << " " << unit << ", nothing." << '\n';
-		}
+				if (iL == 0 && iH == 0 && unit_correct == true)
+				{
+					iH = converted;
+					iL = converted;
+					cout << value << " " << unit << " You're a special snowflake first val, yahoo!\n";
+				}
+					else if (converted >= iH && unit_correct == true)
+					{
+						iH = converted;
+						cout << value << " " << unit << ", is the biggest value so far." << '\n';
+					}
+						else if (converted <= iL && unit_correct == true)
+						{
+							iL = converted;
+							cout << value << " " << unit << ", is the smallest value so far." << '\n';
+						}
+							else if ( iL < converted < iH && unit_correct == true)
+							{
+								cout << value << " " << unit << ", nothing." << '\n';
+							}	
+		
+				sum = sum + converted;
 
 	}
+
+	cout << "The sum of all entered values is: " << sum / 100 << "m\n";
+	cout << "The smallest value of all entered values is: " << iL / 100 << "m\n";
+	cout << "The largest value of all entered values is: " << iH / 100 << "m\n";
+	keep_window_open();
 }
