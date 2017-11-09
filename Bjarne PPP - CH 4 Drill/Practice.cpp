@@ -68,7 +68,7 @@ int main()
 							iL = converted;
 							cout << value << " " << unit << ", is the smallest value so far." << '\n';
 						}
-							else if ( iL < converted < iH && unit_correct == true)
+							else if ( (iL < converted) && (converted < iH) && (unit_correct == true) )
 							{
 								cout << value << " " << unit << ", nothing." << '\n';
 							}	
